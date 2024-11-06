@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #06165f, #5366f5);
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left, .right {
+    
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    width: 60%;
+    background-image: url('Lodgefy_Logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.right {
+    width: 40%;
+    background-color: white;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.login-link {
+    margin-top: 15px;
+}

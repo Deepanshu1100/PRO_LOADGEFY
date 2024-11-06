@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+
+    />
+    <link rel="stylesheet" href="tax.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1> Apartment Tax Calculator</h1>
+      <form action="#">
+        <div class="tax-year">
+          <label for="">Tax Year: </label>
+          <select id="">
+            <option value="">2024</option>
+            <option value="">2025</option>
+            <option value="">2026</option>
+            <option value="">2027</option>
+           
+            
+            
+          </select>
+        </div>
+        <div class="tax-year">
+          <label for="">Select Location </label>
+          <select id="">
+            <option value="">Delhi</option>
+            <option value="">Noida</option>
+            <option value="">Bangaluru</option>
+            <option value="">Chennai</option>
+            <option value="">Hyderabad</option>
+            <option value="">Mumbai</option>
+            <option value="">Gurugram</option>
+            <option value="">West Bengal</option>
+            <option value="">Amritsar</option>
+            <option value="">Pune</option>
+          </select>
+        </div>
+        <div class="income">
+          <label for="">Income/Month:</label>
+          <i class="fa-solid fa--sign"></i>
+          <input type="text" placeholder="₹" class="income-input" />
+        </div>
+        <div class="results">
+          <p>Estimated Amount</p>
+          <input type="text" placeholder="₹0" class="results-input" />
+        </div>
+        <div class="buttons">
+          <button id="calculate">Calculate</button>
+          <button id="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Lodgefy_accounts | All rights reserved</p>
+    </footer>
+
+    <script src="tax_js.js"></script>
+  </body>

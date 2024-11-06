@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    
+}
+.offer-container {
+    display: flex;
+    border: solid black;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding: 184.5px;
+    height: 100%;
+}
+.offer-card:hover{
+    transform: scale(1.1);
+    transition: all 0.9s;
+}
+
+.offer-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    
+}
+
+.offer-card h2 {
+    color: #ff6347;
+}
+
+.offer-card p {
+    margin: 10px 0;
+}
+
+.offer-card .code {
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.offer-card .redeem-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.offer-card .redeem-btn:hover {
+    background-color: #0056b3;
+}

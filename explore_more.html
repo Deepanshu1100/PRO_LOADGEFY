@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lodgefy - Find the Best Hostels and PGs</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="explore_more.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            padding: 30px;
+            background: linear-gradient(135deg, #00457c, #007bbf);
+            color: white;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Listings */
+        .listing {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .listing:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            border-bottom: 4px solid #00457c;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-family: 'Georgia', serif;
+            font-size: 1.6rem;
+            color: #00457c;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .btn-primary {
+            background: #007bbf;
+            border: none;
+            font-weight: 500;
+            padding: 8px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 123, 191, 0.3);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #005c91;
+            box-shadow: 0 6px 15px rgba(0, 91, 145, 0.3);
+        }
+
+        /* Filters */
+        .filter-bar {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .filter-bar input,
+        .filter-bar select {
+            border-radius: 6px;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-bar button {
+            box-shadow: 0 4px 12px rgba(0, 123, 191, 0.3);
+        }
+
+        /* Map Modal */
+        .modal-header {
+            background-color: #00457c;
+            color: white;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        .footer p a {
+            color: #007bbf;
+            text-decoration: none;
+        }
+
+        .footer p a:hover {
+            text-decoration: underline;
+            color: #005c91;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Lodgefy</h1>
+        <p>Find Comfortable and Affordable Hostels & PGs</p>
+    </div>
+
+    <!-- Search/Filter Bar -->
+    <div class="container filter-bar mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="locationFilter" placeholder="Search by location">
+            </div>
+            <div class="col-md-3">
+                <input type="number" class="form-control" id="costFilter" placeholder="Max cost">
+            </div>
+            <div class="col-md-3">
+                <select class="form-control" id="ratingFilter">
+                    <option value="">Select rating</option>
+                    <option value="5">5 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="2">2 stars</option>
+                    <option value="1">1 star</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-block" onclick="filterListings()">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listings Section -->
+    <div class="container mt-5">
+        <div class="row" id="listings">
+            <!-- Mock Listings (20 Cards) -->
+            <!-- Card 1 -->
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./rajni1.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Rajni PG & Hostel</h5>
+                        <p class="card-text location">Location: New York, USA</p>
+                        <p class="card-text cost">Cost per month: $300</p>
+                        <p class="card-text rating">Rating: 4.5</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('40.7128,-74.0060')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./ss2.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">SS SADAN PG & Hostel</h5>
+                        <p class="card-text location">Location: New York, USA</p>
+                        <p class="card-text cost">Cost per month: $300</p>
+                        <p class="card-text rating">Rating: 4.5</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('40.7128,-74.0060')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./shiv3.webp" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Shiv villa PG</h5>
+                        <p class="card-text location">Location: London, UK</p>
+                        <p class="card-text cost">Cost per month: $250</p>
+                        <p class="card-text rating">Rating: 4.2</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('51.5074,-0.1278')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./white4.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">White House Boys Hostel</h5>
+                        <p class="card-text location">Location: Berlin, Germany</p>
+                        <p class="card-text cost">Cost per month: $220</p>
+                        <p class="card-text rating">Rating: 4.7</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Gym</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('52.52,13.4050')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./royal5.jpg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Royal Hostel & Ladies PG</h5>
+                        <p class="card-text location">Location: Sydney, Australia</p>
+                        <p class="card-text cost">Cost per month: $280</p>
+                        <p class="card-text rating">Rating: 4.0</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('-33.8688,151.2093')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./boy6.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Boys PG Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./kalpana-residency-girls.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Kalpana Residency For Girls</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./shiva-hostel-and-pg7.jpg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Shiva Hostel And PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./ishwar-pg-and-guest-house8.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Ishwar PG And Guest House</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./memory-boys-pg9.webp" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Memory Boys PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./sunshine.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Sunshine Men's Hostels And PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./diya-womens-pg-hostel.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Diya Womens PG Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Krishna Boys Hostel.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Krishna Boys Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./sanskar-hostels-and-mess-hostels.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Sanskar Hostel And Mess hostels</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./smarts-girls-pg-.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Smart's Girls PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./PG12.webp" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Deepanshu PG And Mess</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./PG13.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Modi PG And Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Sri Durga Women's PG And Hostel.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Sri Durga Women's PG And Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./GURUKUL PG.jpg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">GURUKUL PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Govindam Girls PG Hostel.jpg " class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Govindam Girls PG Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Shri Ganesha PG For Gents.avif " class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Shri Ganesha PG For Gents</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./DAZZLE PG.jpg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">DAZZLE PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./ITAS PG.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">ITAS PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./STR Ladies PG.avif" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">STR Ladies PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Jeeva Ladies Hostel.avif " class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Jeeva Ladies Hostell</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Vetri Boys Hostel.webp " class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Vetri Boys Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./OM Hostel.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">OM Hostel</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Welcome Hostel And PG.jpeg " class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome Hostel And PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Divine Hostel And PG.jpeg" class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Divine Hostel And PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 listing">
+                <div class="card">
+                    <img src="./Shivam Hostel And PG.jpg " class="card-img-top" alt="Hostel Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Shivam Hostel And PG</h5>
+                        <p class="card-text location">Location: Paris, France</p>
+                        <p class="card-text cost">Cost per month: $310</p>
+                        <p class="card-text rating">Rating: 4.3</p>
+                        <p class="card-text">Facilities: Wi-Fi, Laundry, Kitchen, Parking</p>
+                        <a href="#" class="btn btn-primary" onclick="showMap('48.8566,2.3522')">View on Map</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Map Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mapModalLabel">Location Map</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="map" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 Lodgefy | All Rights Reserved</p>
+        <p>Contact Us: <a href="mailto:info@lodgefy.com">info@lodgefy.com</a> | +1 234 567 890</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function showMap(latLng) {
+            const [latitude, longitude] = latLng.split(',').map(Number);
+
+            if (!window.map) {
+                window.map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: { lat: latitude, lng: longitude }
+                });
+            } else {
+                window.map.setCenter({ lat: latitude, lng: longitude });
+                window.map.setZoom(15);
+            }
+
+            window.map.markers?.forEach(marker => marker.setMap(null));
+            window.map.markers = [];
+
+            const marker = new google.maps.Marker({
+                position: { lat: latitude, lng: longitude },
+                map: window.map,
+            });
+            window.map.markers.push(marker);
+        }
+    </script>
+</body>
+
+</html>
