@@ -120,7 +120,7 @@ header .right-head a:last-child:hover {
 }
 
 .home .home-image {
-    background: url("home2.jpg");
+    background: url("../Images/home2.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;

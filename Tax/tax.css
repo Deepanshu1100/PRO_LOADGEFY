@@ -9,7 +9,7 @@
 body {
   background-color: rgb(227, 225, 225);
   font-family: "Poppins", sans-serif;
-  background: url("./bg.jpg");
+  background: url("/./Images/bg.jpg");
 }
 
 select {
