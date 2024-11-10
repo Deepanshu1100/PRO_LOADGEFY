@@ -20,97 +20,98 @@ html {
     background: #f8f9fb;
 }
 
-header .left-head nav .button {
-    display: none;
-}
+
+/* Header-Styling Starts Here */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: 120px;
     padding: 0 5rem;
+    background-color: #070714;
+    border-radius: 8px;
+    position: sticky;
+    top: 0; /* Position at the top of the viewport */
+    z-index: 900; /* Ensure it stays above other content */
 }
 
-header .menu {
+header .menu-bar {
     display: none;
 }
 
-header .left-head {
+header .Header-Left {
     display: flex;
     align-items: center;
 }
 
-header .left-head .logo {
-    height: 40px;
+header .Header-Left .Company-Logo {
+    height: 74px;
     display: flex;
     align-items: center;
 }
 
-header .left-head .logo img {
+header .Header-Left .Company-Logo img {
     height: 100%;
 }
 
-header .left-head nav .close {
+header .Header-Left nav .close {
     display: none;
 }
 
-header .left-head nav .menu-bar {
+header .Header-Left nav .Menu {
     margin-top: 20px;
-    margin-left: 2rem;
+    margin-left: 4rem;
     font-size: 1.4rem;
-
+    font-weight:700;
 }
 
-header .left-head nav .menu-bar ul {
+header .Header-Left nav .Menu ul {
     display: flex;
-    gap: 3rem;
+    gap: 3.4rem;
 }
 
-header .left-head nav .menu-bar li {
+header .Header-Left nav .Menu li {
     list-style: none;
 }
 
 
-header .left-head nav a {
-    color: var(--black);
-    font-weight: 400;
+header .Header-Left nav a {
+    color: var(--white);
 }
 
-header .left-head nav a:hover {
+header .Header-Left nav a:hover {
     color: rgb(85, 85, 85)
 }
 
-header .right-head {
+header .Header-Right {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-top: 20px;
 }
 
-header .right-head a {
-    color: var(--black);
+header .Header-Right a {
+    color: var(--white);
     font-weight: 600;
     font-size: 1.4rem;
 }
 
-header .right-head a:last-child {
-    background: #000;
+header .Header-Right a {
+    background: #1f1e1e;
     padding: .7rem 1rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--white);
-    font-weight: 400;
     border-radius: .6rem;
 }
 
-header .right-head a:hover {
-    color: rgb(85, 85, 85)
-}
-header .right-head a:last-child:hover {
+header .Header-Right a:hover {
     background: rgba(85, 85, 85);
     color: var(--white);
 }
 
+/* Header-Styling Ends Here */
 
 .home {
     width: 100%;
