@@ -5,7 +5,8 @@
     text-transform: capitalize;
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
-    transition: .2s linear;
+    transition: 0.3s linear;
+    cursor: pointer;
 }
 
 :root {
