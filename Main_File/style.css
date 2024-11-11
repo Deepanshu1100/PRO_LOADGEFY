@@ -65,6 +65,15 @@ header .Header-Left nav .Menu {
     font-size: 1.4rem;
     font-weight:700;
 }
+.l1{
+    margin-left: 463px;
+}
+.l2{
+    margin-left: 40px;
+}
+#Get-Started{
+    margin-left: 450px;
+}
 
 header .Header-Left nav .Menu ul {
     display: flex;
@@ -152,7 +161,7 @@ header .Header-Right a:hover {
 
 .Home-Page .Home-image .Home-text h1 {
     color: whitesmoke;
-    font-size: 5rem;
+    font-size: 7rem;
 }
 
 .Home-Page .Home-image .Home-text h2 {
@@ -167,7 +176,7 @@ header .Header-Right a:hover {
     background-color: orange;
     width: 30rem;
     height: 5rem;
-    font-size: 3.6rem;
+    font-size: 3.5rem;
 }
 
 .Home-Page .Home-image .Home-text #Get-Started a {
