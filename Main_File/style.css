@@ -5,7 +5,8 @@
     text-transform: capitalize;
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
-    transition: .2s linear;
+    transition: 0.3s linear;
+    cursor: pointer;
 }
 
 :root {
@@ -124,7 +125,7 @@ header .Header-Right a:hover {
 
 
 
-/* Home Page Starts here */
+/* Home-Page Starts here */
 
 .Home-Page {
     width: 100%;
@@ -139,7 +140,7 @@ header .Header-Right a:hover {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -155,7 +156,6 @@ header .Header-Right a:hover {
 }
 
 .Home-Page .Home-image .Home-text {
-    padding-left: 5rem;
     z-index: 2;
 }
 
@@ -180,47 +180,21 @@ header .Header-Right a:hover {
 }
 
 .Home-Page .Home-image .Home-text #Get-Started a {
+    display: flex;
+    justify-content: center;
     color: white;
 }
 
-.Home-Page .Home-image .Home-text #Get-Started:hover {
-    background-color: rgba(99, 72, 21, 0.773);
-}
-
-
-
-
-
-
-
-
-.home .home-image .home-text p {
-    font-size: 2.1rem;
-    margin: 0 10rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-}
-
-.home .home-image .home-text a {
-    color:#000;
+.Home-Page .Home-image .Home-text p {
     font-weight: 600;
-    font-size: 1.2rem;
-    border: 2px solid var(--black);
-    padding: .5rem 1.5rem;
-    border-radius: .5rem;
+    font-size: 2rem;
+    color: white;
+    padding-left: 16.8rem;
 }
 
-.home .home-image .home-text a:hover {
-    background: #000;
-    color: var(--white);
-    font-weight: 800;
-}
+/* Home-Page Ends here */
 
-.home .home-image .home-bottom {
-    width: 100%;
-    padding: 6rem;
-    position: relative;
-}
+
 
 .container {
     background: var(--white);
@@ -362,6 +336,11 @@ header .Header-Right a:hover {
 .contact-us .box .s-box:hover {
     transform: translate(0, -1rem);
 }
+
+
+/* Description-Page Starts here */
+  
+/* Description-Page Ends here */
 
 
 .convenience {
