@@ -5,7 +5,7 @@
     text-transform: capitalize;
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
-    transition: 0.3s linear;
+    transition: 0.2s linear;
     cursor: pointer;
 }
 
@@ -19,6 +19,7 @@
 html {
     font-size: 80%;
     background: #f8f9fb;
+    scroll-behavior: smooth;
 }
 
 
@@ -125,6 +126,7 @@ header .Header-Right a:hover {
 
 
 
+
 /* Home-Page Starts here */
 
 .Home-Page {
@@ -196,56 +198,8 @@ header .Header-Right a:hover {
 
 
 
-.container {
-    background: var(--white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    width: 100%;
-    transform: translate(0, -4.5rem);
-    border-radius: 1.5rem;
-    box-shadow: 2px 2px 35px #161c8a3c;
-    padding: 2.5rem 1rem;
-    width: 88vw;
-    margin: 0 auto;
-}
 
-.container .box {
-    padding: .2rem 1rem;
-    width: 100%;
-    flex: 1 0 120px;
-}
-
-.container .box:nth-child(1), .container .box:nth-child(2) {
-    border-right: 2px solid var(--black);
-}
-
-.container .box h5 {
-    font-size: 1.3rem;
-    margin-bottom: .5rem;
-}
-
-.container .box p {
-    color: #444;
-    font-size: 1.1rem;
-}
-
-.container .box a {
-    float: right;
-    padding: 1rem 2rem;
-    color: var(--white);
-    background: var(--blue);
-    border-radius: .5rem;
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-
-
-.container .box a:hover {
-    background: #a7abff;
-}
+/* Description-Page Starts here */
 
 .con-section {
     padding: 12rem;
@@ -337,11 +291,12 @@ header .Header-Right a:hover {
     transform: translate(0, -1rem);
 }
 
+/* Description Ends here */
 
-/* Description-Page Starts here */
-  
-/* Description-Page Ends here */
 
+
+
+/* Service Starts here */
 
 .convenience {
     width: 100%;
@@ -418,6 +373,13 @@ header .Header-Right a:hover {
     object-position: center;
     object-fit: cover;
 }
+
+/* Service Page Ends here */
+
+
+
+
+/* Popular-Property Starts here */
 
 .property {
     width: 100%;
@@ -549,6 +511,92 @@ header .Header-Right a:hover {
     box-shadow: 1px 5px 15px #00000049;
 }
 
+/* Popular-Property Starts here */
+
+
+
+
+/* Testimonial-Page Starts here */
+
+.Testimonials {
+    background: rgb(35, 35, 36);
+}
+
+.Testimonial-silder-area {
+    padding: 10% 0;
+}
+
+.box-area {
+    padding: 30px;
+    position: relative;
+    display: block;
+    background: var(--white);
+    color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    margin: 40px 0;
+    border-radius: 10px;
+}
+
+.box-area h5 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-top: 34px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.box-area span {
+    color: #070714;
+    display: block;
+    font-size: 13px;
+    margin: 0 0 10px;
+    font-weight: 400;
+}
+
+.box-area .content {
+    color: #1f1e1e;
+    font-size:large;
+    font-weight: 400;
+}
+
+.box-area .img-area {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+    right: 0;
+    z-index: 1;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.box-area .img-area img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.Social-Media {
+    margin-top: 30px;
+}
+
+.Social-Media i {
+    margin: 0 10px;
+    color: blue;
+    font-size: 18px;
+}
+/* Testimonial-Page Starts here */
+
+
+
+/* Footer Starts here */
+
 .footer {
     width: 100%;
     background: var(--dark);
@@ -659,6 +707,13 @@ header .Header-Right a:hover {
     color:aquamarine;
     text-align: center;
 }
+
+/* Footer Ends here */
+
+
+
+
+
 /* media section starts here */
 @media (max-width: 1050px) {
 
