@@ -25,12 +25,12 @@
     transform: translate(-50%,-50%);
     text-align: center;
     z-index: 999;
-    width: 450px;
+    width: 430px;
     text-align: center;
     padding: 60px 32px;
     background: rgba(255,255,255,0.04);
     box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
-    border-radius: 10px;
+    border-radius: 20px;
 
 }
 .content header{
