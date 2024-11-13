@@ -57,7 +57,7 @@
 }
 .field{
     position: relative;
-    height: 45px;
+    height: 40px;
     width: 100%;
     display: flex;
     background: rgba(255,255,255,0.94);
