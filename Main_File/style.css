@@ -130,15 +130,15 @@ header .Header-Right a:hover {
 /* Home-Page Starts here */
 
 #Home-Page {
-    width: 100%;
-    margin-top: 8rem;
-    height: 86vh;
+    width: 100vw;
+    height: 100vh;
 }
 
 #Home-Page .Home-image {
     background: url("../Images/istockphoto-530757309-170667a.jpg");
     background-size: cover;
     background-position: center;
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -522,15 +522,17 @@ header .Header-Right a:hover {
     background: linear-gradient(185deg, #0b073c, #180a06);
 }
 
-#Testimonial-silder-area {
+.Testimonial-silder-area {
     padding: 10% 0;
 }
 
-#Testimonial-Container .Testimonial-Heading h3 {
+#Testimonials .Testimonial-Box .Testimonial-Heading {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
+    width: 100%;
+    height: 8rem;
+    padding-top: 14.6rem;
     font-size: 4.5rem;
     color: var(--white);
 }
@@ -543,13 +545,13 @@ header .Header-Right a:hover {
     color: #000000;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
     margin: 40px 0;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .box-area h5 {
     font-size: 24px;
     font-weight: 700;
-    color: var(--blue);
+    color: rgb(4, 4, 246);
     margin-top: 34px;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -557,17 +559,17 @@ header .Header-Right a:hover {
 }
 
 .box-area span {
-    color: #070714;
+    color: #000004;
     display: block;
     font-size: 13px;
     margin: 0 0 10px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .box-area .content {
-    color: #1f1e1e;
+    color: #131313;
     font-size:large;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .box-area .img-area {
@@ -597,7 +599,7 @@ header .Header-Right a:hover {
 
 .Social-Media i {
     margin: 0 10px;
-    color: blue;
+    color: rgb(4, 4, 246);
     font-size: 18px;
 }
 /* Testimonial-Page Starts here */
