@@ -32,10 +32,10 @@
                     <div class="Menu">
                         <ul>
                             <li><a href="#Home-Page">Home</a></li>
-                            <li><a href="#Description-Page">Description</a></li>
-                            <li><a href="#Popular Property-Page">Popular Property</a></li>
-                            <li><a href="#Reviews-Page">Review</a></li>
-                            <li><a href="">Book PG</a></li>
+                            <li><a href="#con-section">Description</a></li>
+                            <li><a href="#property">Popular Property</a></li>
+                            <li><a href="#Testimonials">Review</a></li>
+                            <li><a href="../Explore_more/explore_more.html">Book PG</a></li>
                             <li><a href="../About_us/about2.html">About Us</a></li>
                             <li><a href="../Contact_us/contact2.html">Contact Us</a></li>
                         </ul>
@@ -56,7 +56,7 @@
 
         
         <!-- Home Page Begins here -->
-         <div class="Home-Page">
+         <div id="Home-Page">
             <div class="Home-image">
                 <div class="Home-text">
                     <h1 class="l1">Lodgefy</h1>
@@ -78,7 +78,7 @@
 
 
         <!-- Description Page Starts here -->
-        <div class="con-section">
+        <div id="con-section">
             <div class="contact-us">
                 <div class="text">
                     <h2>
@@ -108,7 +108,7 @@
 
     
         <!-- Service Provided-Page Starts here -->
-        <div class="convenience">
+        <div id="convenience">
             <div class="provided">
                 <div class="box">
                     <h2>10K+</h2>
@@ -141,7 +141,7 @@
 
 
         <!-- Popular Property Starts here -->
-        <div class="property">
+        <div id="property">
             <div class="prop-h">
                 <h2>our popular property</h2>
                 <p>
@@ -279,8 +279,11 @@
 
 
         <!-- Testimonial-Page Starts here -->
-        <section class = "Testimonials">
+        <section id = "Testimonials">
             <div class="Testimonial-Box">
+                <div class = "Testimonial-Heading">
+                    <h3>Testimonials</h3>
+                </div>
                 <div class="Testimonial-Container">
                     <div class="col-md-12">
                         <div class="Testimonial-silder-area text-center owl-carousel">
@@ -360,7 +363,7 @@
 
 
         <!-- Footer Starts here : -->
-        <div class="footer">
+        <div id="footer">
             <div class="footer-box">
                 <div class="box">
                     <div class="logo">
@@ -428,8 +431,8 @@
         $(".Testimonial-silder-area").owlCarousel({
             loop: true,
             nav: true,
-            slideSpeed:300,
-            items: 3,
+            slideSpeed:8000,
+            items: 2,
             autoplay: true,
             navtext:['<i class = "fa fa-arrow-left"></i>','<i class = "fa fa-arrow-right"></i>'],
             margin:30,
@@ -445,7 +448,7 @@
                     items:1
                 },
                 1000:{
-                    item:3
+                    item:2
                 }
             }
         });
