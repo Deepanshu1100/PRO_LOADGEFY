@@ -1,0 +1,60 @@
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 63%;
+    }
+
+
+    header .Header-Left .Navigation-bar {
+        display: none;
+    }
+    header .Header-Right a {
+        display: none;
+    }
+    header .Header-Right .menu-bar i {
+        display: block;
+    }
+
+
+
+    #Home-Page .Home-image .Home-text h1 {
+        font-size: 5rem;
+        margin-left: 40vw;
+        
+    }
+    
+    #Home-Page .Home-image .Home-text h2 {
+        font-size: 3.6rem;
+        margin-left: 14vw;
+    }
+
+    #Home-Page .Home-image .Home-text p {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-left: 25vw;
+    }
+
+
+
+
+    #con-section .contact-us {
+        flex-direction: column;
+    }
+
+    #convenience .video {
+        width: 100%;
+        height: 40vh;
+        overflow: hidden;
+        background: red;
+        border-radius: 1.5rem;
+    }
+
+
+
+    #property .de-box {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
