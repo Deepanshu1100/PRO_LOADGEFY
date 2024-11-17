@@ -23,10 +23,19 @@
             <form action="#">
                 
                 <div class="field1">
-                    <input type ="Submit" value="Submit" >
+                    <input type ="Submit" value="Submit" id = "SignUpBtn">
                 </div>
             </form> 
         </div>
     </div>
+
+    <script>
+        // JavaScript to attach href functionality
+        let SignUp = document.getElementById('SignUpBtn');
+        SignUp.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            window.location.href = 'succesfullyregi.html'; // Redirect to the URL
+        });
+    </script>
 </body>
 </html>
