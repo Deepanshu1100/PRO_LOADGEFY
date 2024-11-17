@@ -33,7 +33,7 @@
                     <a href="#">Forget Password?</a>
                 </div>
                 <div class="field1">
-                    <input type ="Submit" value="Login" >
+                    <input type ="Submit" value="Login" id = "LoginBtn">
                 </div>
                 <div class="login">Or Login with</div>
                 <div class="link">
@@ -51,5 +51,14 @@
                     
         </div>
     </div>
+
+    <script>
+        // JavaScript to attach href functionality
+        let Login = document.getElementById('LoginBtn');
+        Login.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            window.location.href = 'loginsucces.html'; // Redirect to the URL
+        });
+    </script>
 </body>
 </html>

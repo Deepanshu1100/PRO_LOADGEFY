@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Confirmation</title>
+    <link rel="stylesheet" href="succesreg.css">
+</head>
+<body>
+    <div class="box">
+        <div class="icon">✔</div>
+        <h1>Succesfully Registered</h1>
+        <p>Your account is successfully created. Stay tuned for the upcoming information on your email.</p>
+        <button id = "CloseBtn">Close</button>
+    </div>
+
+    <script>
+        let close = document.getElementById('CloseBtn');
+        close.addEventListener('click', function() {
+            window.location.href = '../Main_File/index.html';
+        });
+    </script>
+</body>
+</html>
