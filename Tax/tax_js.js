@@ -15,18 +15,7 @@ reset.addEventListener("click", () => {
 calculate.addEventListener("click", (e) => {
   e.preventDefault;
 
-  if (income.value <= 24000) {
-    results.value = income.value * 0.04;
-  } else if (income.value > 25000 && income.value < 40000) {
-    results.value = income.value * 0.06;
-  } else if (income.value > 40000 && income.value < 60000) {
-    results.value = income.value * 0.08;
-  } else if (income.value > 60000 && income.value < 80000) {
-    results.value = income.value * 0.10;
-  } else if (income.value >= 80000) {
-    results.value = income.value * 0.12;
-  }
-  numRounded();
+  
 });
 
 //Round results
