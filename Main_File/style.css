@@ -5,7 +5,6 @@
     text-transform: capitalize;
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
-    transition: 0.2s linear;
     cursor: pointer;
 }
 
@@ -615,7 +614,7 @@ header .Header-Right .menu-bar i {
     color: rgb(4, 4, 246);
     font-size: 18px;
 }
-/* Testimonial-Page Starts here */
+/* Testimonial-Page Ends here */
 
 
 
