@@ -1,12 +1,12 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #f8f8f8;
-  color: #333;
+  color: #180843;
 }
 
 /* Header */
 .header {
-  background-image: linear-gradient(to right, #007bff, #00c853);
+  background-image: linear-gradient(to right, #0b233d, #021c5e);
   color: #fff;
 }
 
@@ -25,7 +25,7 @@ body {
 
 /* Map Modal */
 .modal-header {
-  background-color: #007bff;
+  background-color: #021a33;
   color: #fff;
 }
 
