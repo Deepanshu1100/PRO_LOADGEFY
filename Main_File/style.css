@@ -439,6 +439,10 @@ header .Header-Right .menu-bar i {
     position: relative;
 }
 
+#property .de-box .box:hover{
+    transform: scaleY(1.1);
+}
+
 #property .de-box .box .image {
     width: 100%;
     height: 26rem;
