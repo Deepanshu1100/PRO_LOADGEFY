@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Outer-Frame {
+    width: 100vw;
+    height: 100vh;
+}
+
+.Outer-Frame .Outer {
+    width: 100%;
+    height: 100%;
+    background: url('https://th.bing.com/th/id/OIP.C4Nee5CwJROzXS3_wXAiKQAAAA?rs=1&pid=ImgDetMain');
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-size: contain;
+}
+
+.Outer-Frame .Outer::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.6) ;
+}
+
+.Outer-Frame .Outer .heading {
+    color: rgb(239, 232, 232);
+    font-size: 2.6rem;   
+    font-weight: bold;
+    padding-bottom: 5.5rem;
+    z-index: 4;
+}
+
+.Outer-Frame .Outer .Professionals {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content:normal;
+    width: 100%;
+    height: 90vh;
+}
+
+.Outer-Frame .Outer .Professionals .card {
+    width: 24rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.45); 
+    z-index: 4;
+}
+
+.Outer-Frame .Outer .Professionals .card:hover {
+    transform: scale(1.17);
+}
+
+.Outer-Frame .Outer .Professionals .card .Ayush{
+    height: 20rem;
+    margin-bottom: 4rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Ayush img {
+    height: 24rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Abhay{
+    height: 20rem;
+    margin-bottom: 4rem;
+    padding-left: 6.4rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Abhay img {
+    height: 24rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Deepanshu{
+    height: 20rem;
+    margin-bottom: 4rem;
+    padding-left: 1rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Deepanshu img {
+    height: 23rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Ashirwad{
+    height: 20rem;
+    margin-bottom: 4rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Ashirwad img {
+    height: 23rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .designation {   
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Outer-Frame .Outer .Professionals .card .designation::before {   
+    content: "";
+}
+
+.Outer-Frame .Outer .Professionals .card .designation .separator {    
+    width: 13rem;
+    height: 3px;
+    background-color: whitesmoke;
+}
+
+
+.Outer-Frame .Outer .Professionals .card .designation {  
+    color:antiquewhite;
+}
+
+.Outer-Frame .Outer .Professionals .card .designation h2 {
+    margin-top: 3px;
+}
+
+.Outer-Frame .Outer .Professionals .card .designation h2,h3 {  
+    margin: 5px 0; /* Reduce space between headings */
+    padding: 0; /* Ensure no extra padding */
+}
