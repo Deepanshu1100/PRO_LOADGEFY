@@ -146,6 +146,8 @@ header .Header-Right .menu-bar i {
     align-items: center;
 }
 
+
+
 #Home-Page .Home-image ::before {
     content: ""; 
     position: absolute;
