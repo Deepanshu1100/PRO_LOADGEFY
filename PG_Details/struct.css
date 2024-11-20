@@ -69,16 +69,18 @@ and ye basic use ki with the help of chat gpt baki esko ayush js ka use kr ske t
     
 }
 
-
-
-
+.material-symbols-outlined{
+	size: 30px;
+}
+.loc i{
+	size: 30px;
+}
 
 #container .product-details > p {
 	font-family: "Farsan", cursive;
 	text-align: center;
-	font-size: 30px;
+	font-size:30px;
 	color: #3a3535;
-    margin-top: 30px;
 }
 #container .product-details > h1{
     font-family:Georgia, 'Times New Roman', Times, serif ;
