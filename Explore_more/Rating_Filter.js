@@ -2,7 +2,7 @@ function filterListings() {
 // Here, I have fetched user input (Rating from dropdown).
 const selectedRating = document.getElementById("ratingFilter").value;
 const selectedLocation = document.getElementById("locationFilter").value;
-const selectedRent = document.getElementById("RentFilter").value;
+const selectedRent = document.getElementById("rentFilter").value;
 
 // Here, I have selected all our PG's by class for matching rating.
 const PG_Rating = document.querySelectorAll(".listing");
