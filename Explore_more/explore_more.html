@@ -166,12 +166,25 @@
     <!-- Search/Filter Bar -->
     <div class="container filter-bar mt-4">
         <div class="row">
-            <div class="col-md-3">
-                <input type="text" class="form-control" id="locationFilter" placeholder="Search by location">
+            
+            <div class="col-md-3" id = "User_Location">
+                <select class="form-control" id="locationFilter">
+                    <option value="">Select Location</option>
+                    <option value="Muradnagar">Muradnagar</option>
+                    <option value="Modinagar">Modinagar</option>
+                    <option value="Ghaziabad">Ghaziabad</option>
+                </select>
             </div>
-            <div class="col-md-3">
-                <input type="number" class="form-control" id="RentFilter" placeholder="Max cost">
+
+            <div class="col-md-3" id = "User_Rent">
+                <select class="form-control" id="rentFilter">
+                    <option value="">Select Rent</option>
+                    <option value="4000-4999">Rs.4000-4999</option>
+                    <option value="5000-5999">Rs.5000-5999</option>
+                    <option value="6000-6999">Rs.6000-6999</option>
+                </select>
             </div>
+
             <div class="col-md-3" id = "User_Star">
                 <select class="form-control" id="ratingFilter">
                     <option value="">Select rating</option>
@@ -182,6 +195,7 @@
                     <option value="1">1 star</option>
                 </select>
             </div>
+
             <div class="col-md-3">
                 <button class="btn btn-primary btn-block" onclick="filterListings()">Apply Filters</button>
             </div>
@@ -193,7 +207,7 @@
         <div class="row" id="listings">
             <!-- Mock Listings (20 Cards) -->
             <!-- Card 1 -->
-            <div class="col-md-4 listing" data-star = "3" data-Location = "Muradnagar" data-Rent = "5000">
+            <div class="col-md-4 listing" data-star = "5" data-Location = "Muradnagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG1.html" target="_blank"><img src="../Images/rajni1.jpeg" class="card-img-top" alt="Hostel Image" ></a>
                     <div class="card-body">
@@ -207,7 +221,7 @@
                 </div>
             </div>
             <!-- Card 2 -->
-            <div class="col-md-4 listing" data-star = "4" data-Location = "Muradnagar" data-Rent = "5000">
+            <div class="col-md-4 listing" data-star = "5" data-Location = "Muradnagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG2.html" target="_blank"><img src="../Images/ss2.jpeg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -221,7 +235,7 @@
                 </div>
             </div>
             <!-- Card 3 -->
-            <div class="col-md-4 listing" data-star = "5" data-Location = "Muradnagar" data-Rent = "7000">
+            <div class="col-md-4 listing" data-star = "4" data-Location = "Muradnagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG3.html" target="_blank"><img src="../Images/shiv3.webp" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -236,7 +250,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Noida" data-Rent = "4000">
+            <div class="col-md-4 listing" data-star = "3" data-Location = "Muradnagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG4.html" target="_blank"><img src="../Images/white4.jpeg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -251,7 +265,7 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="col-md-4 listing" data-star = "3" data-Location = "Ghaziabad" data-Rent = "6000">
+            <div class="col-md-4 listing" data-star = "3" data-Location = "Muradnagar" data-Rent = "5000-5999">
                 <div class="card" >
                     <a href="../PG_Details/PG5.html" target="_blank"><img src="../Images/royal5.jpg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -265,7 +279,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Ghaziabad" data-Rent = "5000">
+            <div class="col-md-4 listing" data-star = "3" data-Location = "Muradnagar" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG6.html" target="_blank"><img src="../Images/boy6.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -278,7 +292,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing"  data-star = "2" data-Location = "Modinagar" data-Rent = "4000">
+
+            <div class="col-md-4 listing"  data-star = "2" data-Location = "Muradnagar" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG7.html" target="_blank"><img src="../Images/kalpana-residency-girls.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -291,7 +306,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "5" data-Location = "Modinagar" data-Rent = "4000">
+
+            <div class="col-md-4 listing" data-star = "2" data-Location = "Muradnagar" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG8.html" target="_blank"><img src="../Images/shiva-hostel-and-pg7.jpg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -304,7 +320,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "5" data-Location = "Modinagar" data-Rent = "5000">
+
+            <div class="col-md-4 listing" data-star = "1" data-Location = "Muradnagar" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG9.html" target="_blank"><img src="../Images/ishwar-pg-and-guest-house8.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -317,7 +334,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "4" data-Location = "Noida" data-Rent = "2000">
+
+            <div class="col-md-4 listing" data-star = "1" data-Location = "Muradnagar" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG10.html" target="_blank"><img src="../Images/memory-boys-pg9.webp" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -330,7 +348,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Noida" data-Rent = "10000">
+
+            <div class="col-md-4 listing" data-star = "5" data-Location = "Modinagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG11.html" target="_blank"><img src="../Images/sunshine.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -343,7 +362,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Noida" data-Rent = "7000">
+
+            <div class="col-md-4 listing" data-star = "5" data-Location = "Modinagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG12.html" target="_blank"><img src="../Images/diya-womens-pg-hostel.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -356,7 +376,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "2" data-Location = "Noida" data-Rent = "5000">
+
+            <div class="col-md-4 listing" data-star = "4" data-Location = "Modinagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG13.html" target="_blank"><img src="../Images/Krishna Boys Hostel.jpeg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -369,7 +390,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Ghaziabad" data-Rent = "3000">
+
+            <div class="col-md-4 listing" data-star = "3" data-Location = "Modinagar" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG14.html" target="_blank"><img src="../Images/sanskar-hostels-and-mess-hostels.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -382,7 +404,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing"  data-star = "1" data-Location = "Noida" data-Rent = "3000">
+
+            <div class="col-md-4 listing"  data-star = "3" data-Location = "Modinagar" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG15.html" target="_blank"><img src="../Images/smarts-girls-pg-.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -395,7 +418,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "3" data-Location = "Ghaziabad" data-Rent = "3000">
+
+            <div class="col-md-4 listing"  data-star = "3" data-Location = "Modinagar" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG16.html" target="_blank"><img src="../Images/PG12.webp" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -408,7 +432,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "5" data-Location = "Ghaziabad" data-Rent = "6000">
+
+            <div class="col-md-4 listing" data-star = "2" data-Location = "Modinagar" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG17.html" target="_blank"><img src="../Images/PG13.jpeg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -421,7 +446,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Muradnagar" data-Rent = "5000">
+            <div class="col-md-4 listing" data-star = "2" data-Location = "Modinagar" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG18.html" target="_blank"><img src="../Images/Sri Durga Women's PG And Hostel.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -434,7 +459,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "4" data-Location = "Modinagar" data-Rent = "9000">
+
+            <div class="col-md-4 listing" data-star = "1" data-Location = "Modinagar" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG19.html" target="_blank"><img src="../Images/GURUKUL PG.jpg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -447,7 +473,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Noida" data-Rent = "6000">
+
+            <div class="col-md-4 listing" data-star = "1" data-Location = "Modinagar" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG20.html" target="_blank"><img src="../Images/Govindam Girls PG Hostel.jpg " class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -461,7 +488,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 listing" data-star = "3" data-Location = "Ghaziabad" data-Rent = "6000">
+            <div class="col-md-4 listing" data-star = "5" data-Location = "Ghaziabad" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG21.html" target="_blank"><img src="../Images/Shri Ganesha PG For Gents.avif " class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -474,7 +501,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "2" data-Location = "Ghaziabad" data-Rent = "5000">
+
+            <div class="col-md-4 listing" data-star = "5" data-Location = "Ghaziabad" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG22.html" target="_blank"><img src="../Images/DAZZLE PG.jpg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -487,7 +515,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Modinagar" data-Rent = "5000">
+            
+            <div class="col-md-4 listing" data-star = "4" data-Location = "Ghaziabad" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG23.html" target="_blank"><img src="../Images/ITAS PG.jpeg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -500,7 +529,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "2" data-Location = "Duhai" data-Rent = "8000">
+            
+            <div class="col-md-4 listing" data-star = "3" data-Location = "Ghaziabad" data-Rent = "4000-4999">
                 <div class="card">
                     <a href="../PG_Details/PG24.html" target="_blank"><img src="../Images/STR Ladies PG.avif" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -513,7 +543,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Duhai" data-Rent = "5000">
+            
+            <div class="col-md-4 listing" data-star = "3" data-Location = "Ghaziabad" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG25.html" target="_blank"><img src="../Images/Jeeva Ladies Hostel.avif " class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -526,7 +557,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Duhai" data-Rent = "5000">
+            
+            <div class="col-md-4 listing" data-star = "3" data-Location = "Ghaziabad" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG26.html" target="_blank"><img src="../Images/Vetri Boys Hostel.webp " class="card-img-top" alt="Hostel Image"></a>
                     <div class = "card-body">
@@ -539,7 +571,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Duhai" data-Rent = "7000">
+            
+            <div class="col-md-4 listing" data-star = "2" data-Location = "Ghaziabad" data-Rent = "5000-5999">
                 <div class="card">
                     <a href="../PG_Details/PG27.html" target="_blank"><img src="../Images/OM Hostel.jpeg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -552,7 +585,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "2" data-Location = "Duhai" data-Rent = "3000">
+            
+            <div class="col-md-4 listing" data-star = "2" data-Location = "Ghaziabad" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG28.html" target="_blank"><img src="../Images/Welcome Hostel And PG.jpeg " class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -565,7 +599,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "4" data-Location = "Duhai" data-Rent = "4000">
+            
+            <div class="col-md-4 listing" data-star = "1" data-Location = "Ghaziabad" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG29.html" target="_blank"><img src="../Images/Divine Hostel And PG.jpeg" class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
@@ -578,7 +613,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 listing" data-star = "1" data-Location = "Modinagar" data-Rent = "5000">
+            
+            <div class="col-md-4 listing" data-star = "1" data-Location = "Ghaziabad" data-Rent = "6000-6999">
                 <div class="card">
                     <a href="../PG_Details/PG30.html" target="_blank"><img src="../Images/Shivam Hostel And PG.jpg " class="card-img-top" alt="Hostel Image"></a>
                     <div class="card-body">
