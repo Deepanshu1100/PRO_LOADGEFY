@@ -73,16 +73,6 @@ html {
     height: 24rem;
 }
 
-.Outer-Frame .Outer .Professionals .card .Abhay{
-    height: 20rem;
-    margin-bottom: 4rem;
-    padding-left: 6.4rem;
-}
-
-.Outer-Frame .Outer .Professionals .card .Abhay img {
-    height: 24rem;
-}
-
 .Outer-Frame .Outer .Professionals .card .Deepanshu{
     height: 20rem;
     margin-bottom: 4rem;
@@ -91,6 +81,16 @@ html {
 
 .Outer-Frame .Outer .Professionals .card .Deepanshu img {
     height: 23rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Abhay{
+    height: 20rem;
+    margin-bottom: 4rem;
+    padding-left: 6.4rem;
+}
+
+.Outer-Frame .Outer .Professionals .card .Abhay img {
+    height: 24rem;
 }
 
 .Outer-Frame .Outer .Professionals .card .Ashirwad{

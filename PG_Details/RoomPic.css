@@ -3,21 +3,25 @@
     justify-content: center;
     margin-bottom: 4rem;
     font-size: 3.4rem;
-    color: white;
+    align-items: center;
+    color: rgb(31, 31, 31);
 }
 
 .slider-container {
     display: flex;
     justify-content: center;
     position: relative;
+    background: rgb(221, 174, 87);
+    border-radius: 8px;
     width: 70%;
     margin: auto;
+    z-index: 100;
 }
 .custom-prev, .custom-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #000;
+    background-color: #2d2c2c;
     color: #fff;
     border: none;
     padding: 10px 15px;
