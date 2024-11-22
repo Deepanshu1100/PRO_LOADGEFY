@@ -3,8 +3,9 @@
     justify-content: center;
     margin-bottom: 4rem;
     font-size: 3.4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     align-items: center;
-    color: rgb(31, 31, 31);
+    color: rgb(210, 157, 23);
 }
 
 .slider-container {
